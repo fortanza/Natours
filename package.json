@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fortanza/Natours.git"
+  },
+  "author": "Fortanza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fortanza/Natours/issues"
+  },
+  "homepage": "https://github.com/fortanza/Natours#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
