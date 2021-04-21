@@ -140,27 +140,60 @@ body {
   margin-bottom: 8rem;
 }
 
-.btn:link, .btn:visited {
+.u-margin-top-small {
+  margin-top: 2rem;
+}
+
+.u-margin-top-middle {
+  margin-top: 4rem;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
+.u-margin-top-huge {
+  margin-top: 10rem;
+}
+
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1.5rem;
+  padding: 1.5rem 4rem;
   display: inline-block;
   border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
   font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
 }
 .btn:hover {
-  transform: translateY(-0.3rem);
+  transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
-.btn:active {
-  transform: translateY(-0.1rem);
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn--white {
+  background-color: #fff;
+  color: #777;
+}
+.btn--white::after {
+  background-color: #fff;
+}
+.btn--green {
+  background-color: #7ed56f;
+  color: #fff;
+}
+.btn--green::after {
+  background-color: #7ed56f;
 }
 .btn::after {
   content: "";
@@ -174,27 +207,19 @@ body {
   z-index: -1;
   transition: all 0.4s;
 }
-
-.btn--white {
-  background-color: #fff;
-  color: #777;
-}
-.btn--white::after {
-  background-color: #fff;
-}
-
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
 
 .btn-text:link, .btn-text:visited {
-  font: size 1.6rem;
+  font-size: 1.6rem;
   color: #7ed56f;
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid #7ed56f;
   padding: 3px;
+  transition: all 0.2s;
 }
 .btn-text:hover {
   background-color: #7ed56f;
@@ -204,7 +229,7 @@ body {
 }
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  transform: translateY(0px);
+  transform: translateY(0);
 }
 
 .composition {
@@ -289,6 +314,12 @@ body {
 .card__side--back-1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
 }
+.card__side--back-2 {
+  background-image: linear-gradient(to right bottom, #55c57a, #28b485);
+}
+.card__side--back-3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
 .card:hover .card__side--front {
   transform: rotateY(-180deg);
 }
@@ -301,15 +332,17 @@ body {
   background-blend-mode: screen;
   -webkit-background-clip: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .card__picture--1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
 }
 .card__picture--2 {
-  background-image: url(../img/nat-6.jpg);
+  background-image: linear-gradient(to right bottom, #55c57a, #28b485), url(../img/nat-6.jpg);
 }
 .card__picture--3 {
-  background-image: url(../img/nat-7.jpg);
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
 }
 .card__heading {
   font-size: 2.8rem;
@@ -330,6 +363,12 @@ body {
 .card__heading-span--1 {
   background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
 }
+.card__heading-span--2 {
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.85), rgba(40, 180, 133, 0.85));
+}
+.card__heading-span--3 {
+  background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85));
+}
 .card__details {
   padding: 3rem;
 }
@@ -345,6 +384,26 @@ body {
 }
 .card__details ul li:not(:last-child) {
   border-bottom: 1px solid #eee;
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+.card__price-box {
+  color: #fff;
+  margin-bottom: 8rem;
+}
+.card__price-only {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-size: 6rem;
+  font-weight: 100;
 }
 
 .row {
@@ -427,7 +486,7 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -10rem;
 }
 
